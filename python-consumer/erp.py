@@ -3,7 +3,7 @@ import json
 
 # Define the Kafka broker and topic
 broker = 'my-kafka.gran4u-dev.svc.cluster.local:9092'
-topic = 'my-first-topic'
+topic = 'partitionned'
 
 # Create a Kafka consumer
 consumer = KafkaConsumer(
@@ -11,7 +11,7 @@ consumer = KafkaConsumer(
     bootstrap_servers=[broker],
     auto_offset_reset='earliest',
     enable_auto_commit=True,
-    group_id='erp',
+    group_id='crm',
     sasl_mechanism='SCRAM-SHA-256',
     security_protocol='SASL_PLAINTEXT',
     sasl_plain_username='user1',
