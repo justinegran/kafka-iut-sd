@@ -2,7 +2,7 @@ from kafka import KafkaConsumer
 import json
 
 # Define the Kafka broker and topic
-broker = '{RPI_IP}}:9092'
+broker = 'my-kafka.gran4u-dev.svc.cluster.local:9092'
 topic = 'my-first-topic'
 
 # Create a Kafka consumer
@@ -11,8 +11,11 @@ consumer = KafkaConsumer(
     bootstrap_servers=[broker],
     auto_offset_reset='earliest',
     enable_auto_commit=True,
-    group_id='my-group',
-    value_deserializer=lambda x: json.loads(x.decode('utf-8'))
+    group_id='erp',
+    sasl_mechanism='SCRAM-SHA-256',
+    security_protocol='SASL_PLAINTEXT',
+    sasl_plain_username='user1',
+    sasl_plain_password='B9R3L1I1Uy'
 )
 
 print(f"Listening to topic {topic}")
