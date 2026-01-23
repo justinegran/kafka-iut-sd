@@ -15,7 +15,7 @@ consumer = KafkaConsumer(
     sasl_mechanism='SCRAM-SHA-256',
     security_protocol='SASL_PLAINTEXT',
     sasl_plain_username='user1',
-    sasl_plain_password='B9R3L1I1Uy'
+    sasl_plain_password='s3qiduaFJS'
 )
 
 print(f"Listening to topic {topic}")
